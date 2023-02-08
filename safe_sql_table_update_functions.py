@@ -76,3 +76,13 @@ def update_table(read_engine,write_engine,table_name,table_version,sql_statement
     except Exception as e:
         print(e)
         print(f"""{table} failed to update""")
+
+# Example Application
+
+table_name='<insert table name>'
+
+update_historical_table(archive, write, table_name, '')
+
+sql_statement = """create table {} as <insert query>"""
+
+update_table(read, write, table_name, '', sql_statement)
